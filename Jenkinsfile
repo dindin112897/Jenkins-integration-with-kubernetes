@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "thetips4you/nodeapp"
+    dockerimagename = "geraldine28/nodeapp"
     dockerImage = ""
   }
 
@@ -30,8 +30,7 @@ pipeline {
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push ("geraldine28/dockerhub:latest")
-            //dockerImage.push("latest")
+            dockerImage.push("latest")
           }
         }
       }
